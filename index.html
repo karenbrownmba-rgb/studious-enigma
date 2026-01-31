@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOJ Puzzle Game</title>
+
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Icons (optional but recommended) -->
+    <link rel="icon" href="icons/icon-192.png" type="image/png">
+
+    <!-- Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #8b0000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        #puzzle-container {
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            background: gold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heroines of Jericho Puzzle Game</h1>
+    <p>Tap the button to reveal your puzzle.</p>
+
+    <div id="puzzle-container">Press Start</div>
+
+    <button onclick="loadPuzzle()">Start Puzzle</button>
+
+    <script src="script.js"></script>
+
+    <!-- Register Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(() => console.log("Service Worker Registered"));
+        }
+    </script>
+</body>
+</html>
